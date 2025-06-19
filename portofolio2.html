@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Aakash Kumar | AI/ML Portfolio</title>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <style>
+ :root {
+ --primary-color: #ff416c;
+ --bg-color: #0d0d0d;
+ --text-color: #ffffff;
+ --card-bg: #1f1f1f;
+ }
+
+ body.light-mode {
+ --bg-color: #ffffff;
+ --text-color: #000000;
+ --card-bg: #f0f0f0;
+ }
+
+ * {
+ margin: 0; padding: 0; box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+ }
+ body {
+ background: var(--bg-color);
+ color: var(--text-color);
+ scroll-behavior: smooth;
+ transition: background 0.3s, color 0.3s;
+ }
+ header {
+ position: fixed;
+ width: 100%;
+ background: rgba(0, 0, 0, 0.8);
+ backdrop-filter: blur(10px);
+ display: flex; justify-content: space-between; align-items: center;
+ padding: 1rem 5%; z-index: 1000;
+ }
+ header h1 span { color: var(--primary-color); }
+ nav a {
+ color: #fff; margin-left: 2rem; text-decoration: none; position: relative;
+ }
+ nav a.active::after, nav a:hover::after {
+ content: ''; position: absolute; width: 100%; height: 2px;
+ background: var(--primary-color); bottom: -4px; left: 0;
+ }
+ .toggle-btn {
+ background: none;
+ border: none;
+ cursor: pointer;
+ color: var(--primary-color);
+ font-size: 1.4rem;
+ margin-left: 1.5rem;
+ }
+ .hero {
+ display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; min-height: 100vh;
+ background-color: #000;
+ padding: 5rem 10%;
+ }
+ .hero .left {
+ flex: 1 1 60%; background: rgba(0,0,0,0.6);
+ }
+ .hero .left h2 { font-size: 3rem; color: #fff; }
+ .hero .left p { font-size: 1.2rem; color: #ccc; margin: 1rem 0; }
+ .hero .socials {
+ display: flex;
+ gap: 1rem;
+ margin-bottom: 1rem;
+ }
+ .hero .socials a {
+ color: var(--primary-color); font-size: 1.5rem;
+ transition: transform 0.3s;
+ }
+ .hero .socials a:hover {
+ transform: scale(1.2);
+ }
+ .hero img {
+ width: 180px;
+ border-radius: 12px;
+ margin-left: auto;
+ }
+ .about, .education, .skills, .projects, .contact {
+ padding: 5rem 10%;
+ }
+ .about img, .education img {
+ width: 150px;
+ border-radius: 12px;
+ float: right;
+ margin-left: 1rem;
+ }
+ .about-content, .edu-flex {
+ display: flex; gap: 2rem; align-items: center;
+ }
+ .edu-tree ul { list-style: none; padding-left: 1rem; }
+ .edu-tree li::before { content: '🎓 '; }
+ .skills .card-grid, .projects .card-grid {
+ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+ }
+ .card {
+ background: var(--card-bg); padding: 1rem; border-radius: 10px;
+ display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+ font-size: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.2);
+ transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 0 15px rgba(0,0,0,0.3);
+ }
+ .card i {
+ font-size: 1.5rem;
+ color: var(--primary-color);
+ }
+ .card img {
+ width: 100%;
+ border-radius: 8px;
+ }
+ .resume-btn, .contact form button {
+ margin-top: 1rem; background: var(--primary-color); color: #fff;
+ padding: 0.7rem 1.2rem; border: none; border-radius: 5px;
+ cursor: pointer;
+ }
+ .sticky-nav {
+ position: fixed; top: 0; width: 100%;
+ background: #000000aa; z-index: 999;
+ }
+ .contact form {
+ display: flex; flex-direction: column; gap: 1rem;
+ }
+ .contact input, .contact textarea {
+ padding: 0.7rem; border-radius: 5px; border: none;
+ }
+ footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #888; }
+ </style>
+</head>
+<body>
+ <header id="navbar">
+ <h1><span>Aakash</span> Kumar</h1>
+ <nav>
+ <a href="#about">About</a>
+ <a href="#education">Education</a>
+ <a href="#skills">Skills</a>
+ <a href="#projects">Projects</a>
+ <a href="#contact">Contact</a>
+ <button class="toggle-btn" onclick="toggleMode()"><i class="fas fa-adjust"></i></button>
+ </nav>
+ </header>
+
+ <section class="hero">
+ <div class="left" data-aos="fade-up">
+ <h2>Hi, I'm Aakash Kumar</h2>
+ <p>AI/ML Engineer | CSE Student </p>
+ <div class="socials">
+ <a href="https://www.linkedin.com/in/aakash-kumar-6a3222314" target="_blank"><i class="fab fa-linkedin"></i></a>
+ <a href="https://github.com/Aakashkumargit" target="_blank"><i class="fab fa-github"></i></a>
+ <a href="mailto:2020aakashbaghel@gmail.com"><i class="fas fa-envelope"></i></a>
+ </div>
+ <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+ </div>
+ <img src="aakash.jpg" alt="Aakash Hero">
+ </section>
+
+ <section class="about" id="about" data-aos="fade-up">
+ <h2>About Me</h2>
+ <div class="about-content">
+ <img src="aakash4.jpg" alt="Aakash">
+ <p>I am a CSE student with a deep passion for AI/ML, with solid skills in Python, Java, SQL, and frameworks. I build smart, scalable and real-world ready applications.</p>
+ </div>
+ </section>
+
+ <section class="education" id="education" data-aos="fade-up">
+ <h2>Education</h2>
+ <div class="edu-flex">
+ <div class="edu-tree">
+ <ul>
+ <li>10th Grade - CBSE Board (2020-21)</li>
+ <li>12th Grade - CBSE Board (2022-23)</li>
+ <li>B.Tech CSE - KIET Ghaziabad (2024-28)</li>
+ </ul>
+ </div>
+ <img src="aakash5.jpg" alt="Education">
+ </div>
+ </section>
+
+ <section class="skills" id="skills" data-aos="fade-up">
+ <h2>Skills</h2>
+ <div class="card-grid">
+ <div class="card"><i class="fab fa-python"></i> Python, Java, Kotlin, C</div>
+ <div class="card"><i class="fab fa-html5"></i> HTML, CSS, JavaScript</div>
+ <div class="card"><i class="fas fa-database"></i> SQL, Flask, Git, GitHub</div>
+ <div class="card"><i class="fas fa-robot"></i> AI/ML: Sklearn, Pandas, NumPy, Matplotlib</div>
+ </div>
+ </section>
+
+ <section class="projects" id="projects" data-aos="fade-up">
+ <h2>Projects</h2>
+ <div class="card-grid">
+ <div class="card" data-aos="zoom-in">
+ <h3>Smart AI Helmet</h3>
+ <p>Fall detection with ML sensors and auto alerts.</p>
+ <img src="helmet.gif" alt="Helmet">
+ </div>
+ <div class="card" data-aos="zoom-in">
+ <h3>Voice Assistant</h3>
+ <p>Voice-controlled Python assistant for tasks.</p>
+ <img src="touch.gif" alt="Voice Assistant">
+ </div>
+ <div class="card" data-aos="zoom-in">
+ <h3>Health Risk Predictor</h3>
+ <p>ML-powered health prediction web app.</p>
+ <img src="health.gif" alt="Health">
+ </div>
+ <div class="card" data-aos="zoom-in">
+ <h3>Car Simulator Game</h3>
+ <p>Python game with realistic collision logic.</p>
+ <img src="car.gif" alt="Car">
+ </div>
+ </div>
+ </section>
+
+ <section class="contact" id="contact" data-aos="fade-up">
+ <h2>Contact Me</h2>
+ <form>
+ <input type="text" placeholder="Your Name" required>
+ <input type="email" placeholder="Your Email" required>
+ <textarea placeholder="Your Message" rows="5" required></textarea>
+ <button type="submit">Send Message</button>
+ </form>
+ <p>📧 2020aakashbaghel@gmail.com<br>📧 aaaksh.2428cse2420@kiet.edu<br>📞 +91 7505278027</p>
+ </section>
+
+ <footer>
+ <p>© 2025 Aakash Kumar • Made with 💡 Passion and ☕ Code</p>
+ </footer>
+
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+ AOS.init({ once: true });
+ const sections = document.querySelectorAll('section');
+ const navLinks = document.querySelectorAll('nav a');
+
+ window.addEventListener('scroll', () => {
+ let current = '';
+ sections.forEach(sec => {
+ const top = window.scrollY;
+ const offset = sec.offsetTop - 100;
+ const height = sec.offsetHeight;
+ if (top >= offset && top < offset + height) current = sec.getAttribute('id');
+ });
+ navLinks.forEach(link => {
+ link.classList.remove('active');
+ if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+ });
+ });
+
+ function toggleMode() {
+ document.body.classList.toggle('light-mode');
+ }
+ </script>
+</body>
+</html>
